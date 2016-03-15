@@ -46,13 +46,14 @@ class ChaptersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_chapter
-      @chapter = Chapter.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def chapter_params
-      params.require(:chapter).permit(:name, :number)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_chapter
+    @chapter = Chapter.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def chapter_params
+    params.require(:chapter).permit(:name, :number)
+  end
 end
