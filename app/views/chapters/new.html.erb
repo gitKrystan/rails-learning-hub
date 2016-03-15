@@ -3,3 +3,7 @@
 </div>
 
 <%= render 'form' %>
+
+<% content_for(:adminbar) do %>
+  <li><%= link_to 'Cancel', chapters_path %></li>
+<% end %>
