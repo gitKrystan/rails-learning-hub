@@ -2,19 +2,15 @@
   <h1>Chapters</h1>
 </div>
 
-<div class="panel-group">
+<ul class="nav nav-pills nav-stacked">
   <% @chapters.each do |chapter| %>
-    <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>
-        <%= link_to chapter do %>
-          <%= chapter.name %>
-        <% end %>
-      </h2>
-    </div>
-    </div>
+  <li>
+    <%= link_to chapter do %>
+      <%= chapter.name %>
+    <% end %>
+  </li>
   <% end %>
-</div>
+</ul>
 
 <% content_for(:adminbar) do %>
   <li><%= link_to 'New Chapter', new_chapter_path %></li>

@@ -2,19 +2,15 @@
   <h1>Sections</h1>
 </div>
 
-<div class="panel-group">
+<ul class="nav nav-pills nav-stacked">
   <% @sections.each do |section| %>
-    <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>
-        <%= link_to section do %>
-          <%= section.name %>
-        <% end %>
-      </h2>
-    </div>
-    </div>
+  <li>
+    <%= link_to section do %>
+      <%= section.name %>
+    <% end %>
+  </li>
   <% end %>
-</div>
+</ul>
 
 <% content_for(:adminbar) do %>
   <li><%= link_to 'New Section', new_section_path %></li>

@@ -2,7 +2,28 @@
   <h1><%= @chapter.name %></h1>
 </div>
 
-<!-- Chapter Sections will be listed here -->
+<% if @chapter.sections %>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <% @chapter.sections.each do |section| %>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingSection<%= section.id %>">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSection<%= section.id %>" aria-expanded="false" aria-controls="collapseSection<%= section.id %>">
+            <%= section.name %>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseSection<%= section.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSection<%= section.id %>">
+        <div class="panel-body">
+          Under construction. Check back soon!
+          <!-- Lessons will go here -->
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% end %>
 
 <% content_for(:adminbar) do %>
   <li>
