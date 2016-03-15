@@ -9,6 +9,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1
   def show
+    @next_lesson = @lesson.next unless @lesson.section.nil?
   end
 
   # GET /lessons/new
@@ -59,7 +60,6 @@ class LessonsController < ApplicationController
   end
 
   def set_section_options
-    @section_options_array = Section.all
-      .collect { |section| [section.name, section.id] }
+    @section_options_array = Section.all.collect { |s| [s.name, s.id] }
   end
 end
