@@ -8,4 +8,10 @@ describe 'the add a chapter process' do
     click_on 'Create Chapter'
     expect(page).to have_content 'Test Chapter'
   end
+
+  it 'gives error when no name is entered' do
+    visit new_chapter_path
+    click_on 'Create Chapter'
+    expect(page).to have_content 'error'
+  end
 end
