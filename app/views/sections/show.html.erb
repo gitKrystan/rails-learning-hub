@@ -1,14 +1,8 @@
-
-
-<p>
-  <strong>Name:</strong>
-  <%= @section.name %>
-</p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @section.number %>
-</p>
+<div class="page-header">
+  <h1>
+    <%= @section.name %>
+  </h1>
+</div>
 
 <p>
   <% if @section.chapter %>
@@ -17,5 +11,12 @@
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_section_path(@section) %> |
-<%= link_to 'Back', sections_path %>
+<!-- Section Lessons will be listed here -->
+
+<% content_for(:adminbar) do %>
+  <li>
+    <%= link_to edit_section_path(@section) do %>
+      Edit <%= @section.name %>
+    <% end %>
+  </li>
+<% end %>
