@@ -1,23 +1,19 @@
-
+<div class="page-header">
+  <h1>
+    <%= @lesson.name %>
+  </h1>
+</div>
 
 <p>
-  <strong>Name:</strong>
-  <%= @lesson.name %>
-</p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @lesson.number %>
+  <% if @lesson.section %>
+    <strong>Section:</strong>
+    <%= @lesson.section.name %>
+  <% end %>
 </p>
 
 <p>
   <strong>Content:</strong>
   <%= @lesson.content %>
-</p>
-
-<p>
-  <strong>Section:</strong>
-  <%= @lesson.section %>
 </p>
 
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |

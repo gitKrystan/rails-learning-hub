@@ -16,7 +16,7 @@ describe 'the add a section process' do
   end
 
   it 'assigns a section to a chapter' do
-    chapter = Chapter.create(name: 'Test Chapter')
+    Chapter.create(name: 'Test Chapter')
     visit new_section_path
     fill_in 'Name', with: 'Test Section'
     select 'Test Chapter'

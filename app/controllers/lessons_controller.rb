@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  before_action :set_section_options, only: [:new, :edit]
 
   # GET /lessons
   def index
@@ -46,13 +47,19 @@ class LessonsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_lesson
-      @lesson = Lesson.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def lesson_params
-      params.require(:lesson).permit(:name, :number, :content, :section_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_lesson
+    @lesson = Lesson.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def lesson_params
+    params.require(:lesson).permit(:name, :number, :content, :section_id)
+  end
+
+  def set_section_options
+    @section_options_array = Section.all
+      .collect { |section| [section.name, section.id] }
+  end
 end
