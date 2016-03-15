@@ -14,4 +14,13 @@ describe 'the add a section process' do
     click_on 'Create Section'
     expect(page).to have_content 'error'
   end
+
+  it 'assigns a section to a chapter' do
+    chapter = Chapter.create(name: 'Test Chapter')
+    visit new_section_path
+    fill_in 'Name', with: 'Test Section'
+    select 'Test Chapter'
+    click_on 'Create Section'
+    expect(page).to have_content 'Test Chapter'
+  end
 end

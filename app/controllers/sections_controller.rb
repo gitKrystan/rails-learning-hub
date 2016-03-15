@@ -1,5 +1,6 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy]
+  before_action :set_chapter_options, only: [:new, :edit]
 
   # GET /sections
   def index
@@ -54,5 +55,10 @@ class SectionsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def section_params
       params.require(:section).permit(:name, :number, :chapter_id)
+    end
+
+    def set_chapter_options
+      @chapter_options_array = Chapter.all
+        .collect { |chapter| [chapter.name, chapter.id] }
     end
 end

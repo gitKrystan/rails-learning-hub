@@ -11,8 +11,10 @@
 </p>
 
 <p>
-  <strong>Chapter:</strong>
-  <%= @section.chapter %>
+  <% if @section.chapter %>
+    <strong>Chapter:</strong>
+    <%= @section.chapter.name %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_section_path(@section) %> |
