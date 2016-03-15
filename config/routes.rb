@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   root to: 'chapters#index'
   resources :lessons
-  resources :sections do
-    resources :lessons, only: [:show]
-  end
+  resources :sections
   resources :chapters
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
