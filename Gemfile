@@ -33,6 +33,7 @@ gem 'turbolinks'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'launchy'
   gem 'pry'
   # Call 'byebug' anywhere in the code to stop execution
