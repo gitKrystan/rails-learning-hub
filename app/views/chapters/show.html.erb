@@ -2,9 +2,9 @@
   <h1><%= @chapter.name %></h1>
 </div>
 
-<% if @chapter.sections %>
+<% if @sections %>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <% @chapter.sections.each do |section| %>
+  <% @sections.each do |section| %>
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingSection<%= section.id %>">
         <h4 class="panel-title">
@@ -17,7 +17,7 @@
         <div class="panel-body">
           <% if section.lessons.any? %>
             <ul class="nav nav-pills nav-stacked">
-              <% section.lessons.each do |lesson| %>
+              <% section.lessons.order(:number).each do |lesson| %>
               <li>
                 <%= link_to lesson do %>
                   <%= lesson.name %>

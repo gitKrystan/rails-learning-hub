@@ -8,6 +8,7 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/1
   def show
+    @sections = @chapter.sections.order(:number)
   end
 
   # GET /chapters/new

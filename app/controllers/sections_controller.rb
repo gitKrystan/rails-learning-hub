@@ -4,7 +4,13 @@ class SectionsController < ApplicationController
 
   # GET /sections
   def index
-    @sections = Section.all
+    chapter_id = params[:chapter_id]
+    if chapter_id
+      @chapter = Chapter.find(chapter_id)
+      @sections = @chapter.sections.order(:number)
+    else
+      @sections = Section.order(:name)
+    end
   end
 
   # GET /sections/1
