@@ -1,5 +1,9 @@
-<h1>New Lesson</h1>
+<div class="page-header">
+  <h1>New Lesson</h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', lessons_path %>
+<% content_for(:adminbar) do %>
+  <li><%= link_to 'Cancel', lessons_path %></li>
+<% end %>
