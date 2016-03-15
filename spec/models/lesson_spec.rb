@@ -12,12 +12,12 @@ RSpec.describe Lesson, type: :model do
       current_lesson = Lesson.create(name: 'lesson1',
                                      number: 1,
                                      section: section)
+      other_lesson = Lesson.create(name: 'other lesson',
+                     number: 2,
+                     section: other_section)
       next_lesson = Lesson.create(name: 'lesson2',
                                   number: 3,
                                   section: section)
-      Lesson.create(name: 'other lesson',
-                    number: 2,
-                    section: other_section)
       expect(current_lesson.next).to eq next_lesson
     end
   end

@@ -3,6 +3,6 @@ class Lesson < ActiveRecord::Base
   validates :name, presence: true
 
   def next
-    Lesson.where('id > ?', id).first
+    Lesson.where('number > ? AND section_id = ?', number, section.id).first
   end
 end
