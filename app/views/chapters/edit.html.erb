@@ -1,6 +1,7 @@
 <h1>Editing Chapter</h1>
 
 <%= render 'form' %>
+<%= link_to 'Destroy', @chapter, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <%= link_to 'Show', @chapter %> |
 <%= link_to 'Back', chapters_path %>

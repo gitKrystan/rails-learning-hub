@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'chapters#index'
   resources :lessons
   resources :sections
   resources :chapters
