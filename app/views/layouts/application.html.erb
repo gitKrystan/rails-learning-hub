@@ -23,7 +23,7 @@
 
     <% if content_for?(:navbar) %>
     <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
         <%= yield(:navbar) %>
       </ul>
     </div>
@@ -37,7 +37,7 @@
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
-  <div class="container">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#adminbar-collapse" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -51,6 +51,8 @@
     <div class="collapse navbar-collapse" id="adminbar-collapse">
       <ul class="nav navbar-nav">
         <%= yield(:adminbar) %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li class="<%= 'active' if params[:controller] == 'chapters' %>">
           <%= link_to 'Chapters', chapters_path %>
         </li>

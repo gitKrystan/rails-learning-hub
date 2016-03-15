@@ -1,15 +1,17 @@
 <% content_for(:navbar) do %>
+  <% if @previous_lesson %>
+    <li>
+      <%= link_to @previous_lesson do %>
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+        Previous Lesson: <%= @previous_lesson.name %>
+      <% end %>
+    </li>
+  <% end %>
   <% if @next_lesson %>
     <li>
       <%= link_to @next_lesson do %>
         Next Lesson: <%= @next_lesson.name %>
-      <% end %>
-    </li>
-  <% end %>
-  <% if @previous_lesson %>
-    <li>
-      <%= link_to @previous_lesson do %>
-        Previous Lesson: <%= @previous_lesson.name %>
+        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
       <% end %>
     </li>
   <% end %>
