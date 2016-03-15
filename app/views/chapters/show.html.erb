@@ -15,8 +15,19 @@
       </div>
       <div id="collapseSection<%= section.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSection<%= section.id %>">
         <div class="panel-body">
-          Under construction. Check back soon!
-          <!-- Lessons will go here -->
+          <% if section.lessons.any? %>
+            <ul class="nav nav-pills nav-stacked">
+              <% section.lessons.each do |lesson| %>
+              <li>
+                <%= link_to lesson do %>
+                  <%= lesson.name %>
+                <% end %>
+              </li>
+              <% end %>
+            </ul>
+          <% else %>
+            Under construction. Check back soon!
+          <% end %>
         </div>
       </div>
     </div>
