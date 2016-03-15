@@ -9,7 +9,9 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1
   def show
-    @next_lesson = @lesson.next unless @lesson.section.nil?
+    has_section = @lesson.section
+    @next_lesson = @lesson.next if has_section
+    @previous_lesson = @lesson.previous if has_section
   end
 
   # GET /lessons/new

@@ -6,6 +6,13 @@
       <% end %>
     </li>
   <% end %>
+  <% if @previous_lesson %>
+    <li>
+      <%= link_to @previous_lesson do %>
+        Previous Lesson: <%= @previous_lesson.name %>
+      <% end %>
+    </li>
+  <% end %>
 <% end %>
 
 <div class="page-header">
