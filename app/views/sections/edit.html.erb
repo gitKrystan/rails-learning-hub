@@ -1,6 +1,14 @@
-<h1>Editing Section</h1>
+<div class="page-header">
+  <h1>Edit Section: <%= @section.name %></h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @section %> |
-<%= link_to 'Back', sections_path %>
+<% content_for(:adminbar) do %>
+  <li><%= link_to 'Cancel', @section %></li>
+  <li>
+    <%= link_to @section, method: :delete, data: { confirm: 'Are you sure?' } do %>
+      Delete <%= @section.name %>
+    <% end %>
+  </li>
+<% end %>

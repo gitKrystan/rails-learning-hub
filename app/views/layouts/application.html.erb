@@ -10,13 +10,28 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <%= link_to 'Learn How To Brogram', '/', class: 'navbar-brand' %>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="<%= 'active' if params[:controller] == 'chapters' %>">
-        <%= link_to 'Chapters', chapters_path %>
-      </li>
-    </ul>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="<%= 'active' if params[:controller] == 'chapters' %>">
+          <%= link_to 'Chapters', chapters_path %>
+        </li>
+        <li class="<%= 'active' if params[:controller] == 'sections' %>">
+          <%= link_to 'Sections', sections_path %>
+        </li>
+        <li class="<%= 'active' if params[:controller] == 'lessons' %>">
+          <%= link_to 'Lessons', lessons_path %>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
