@@ -1,14 +1,13 @@
+<div class="page-header">
+  <h1><%= @chapter.name %></h1>
+</div>
 
+<!-- Chapter Sections will be listed here -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @chapter.name %>
-</p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @chapter.number %>
-</p>
-
-<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
-<%= link_to 'Back', chapters_path %>
+<% content_for(:adminbar) do %>
+  <li>
+    <%= link_to edit_chapter_path(@chapter) do %>
+      Edit <%= @chapter.name %>
+    <% end %>
+  </li>
+<% end %>
