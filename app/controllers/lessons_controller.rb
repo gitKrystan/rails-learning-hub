@@ -12,6 +12,12 @@ class LessonsController < ApplicationController
     has_section = @lesson.section
     @next_lesson = @lesson.next if has_section
     @previous_lesson = @lesson.previous if has_section
+    if @lesson.content
+      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+                                         autolink: true,
+                                         tables: true)
+      @content_markdown = markdown.render(@lesson.content).html_safe
+    end
   end
 
   # GET /lessons/new

@@ -29,9 +29,11 @@
   </h1>
 </div>
 
-<div>
-  <%= @lesson.content %>
-</div>
+<% if @content_markdown %>
+  <div class="content-markdown">
+    <%= @content_markdown %>
+  </div>
+<% end %>
 
 <% content_for(:adminbar) do %>
   <li>

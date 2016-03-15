@@ -32,6 +32,9 @@ gem 'turbolinks'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# A fast, safe and extensible Markdown to (X)HTML parser
+gem 'redcarpet', '~> 3.3', '>= 3.3.4'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
