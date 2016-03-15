@@ -19,7 +19,7 @@
             <ul class="nav nav-pills nav-stacked">
               <% section.lessons.order(:number).each do |lesson| %>
               <li>
-                <%= link_to lesson do %>
+                <%= link_to section_lesson_path(section, lesson) do %>
                   <%= lesson.name %>
                 <% end %>
               </li>
